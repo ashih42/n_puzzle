@@ -35,7 +35,7 @@ void		Solver::solve( void )
 		std::cout << BLUE BOLD "Solver: " NORMAL << "I GOT DIS" << std::endl;
 	else
 	{
-		std::cout << BLUE BOLD "Solver: " NORMAL << "NO WAY MANG\n" << std::endl;
+		std::cout << BLUE BOLD "Solver: " NORMAL << "NO WAI MANG\n" << std::endl;
 		return;
 	}
 

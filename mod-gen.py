@@ -24,7 +24,7 @@ def make_puzzle(s, solvable, iterations):
 	for i in range(iterations):
 		swap_empty(p)
 	
-	if not solvable:
+	if (s % 2 == 0 and not solvable) or (s % 2 == 1 and solvable):
 		if p[0] == 0 or p[1] == 0:
 			p[-1], p[-2] = p[-2], p[-1]
 		else:
