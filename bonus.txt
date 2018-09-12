@@ -1,0 +1,23 @@
+- This some high quality visualizer!
+
+- Not only does the puzzle solve itself, but you can play too, hooman!
+
+- You can slide number tiles xor amazing meaningful pictures!
+
+- You can UNDO and RESET in case you're bad at this game!
+
+- You can even play WITH hint xor WITHOUT hint, in case you're really bad at this game!
+
+- You can print out a log of all your moves at any time and show it to your friends!
+
+- Lexer Parser wombo combo!
+
+- Dope-ass error handling!
+
+- Professionally made UML class diagram!
+
+- CPP STL containers and functors!
+
+- Command design pattern da real MVP!
+
+- Wolverine seal of approval!
