@@ -6,7 +6,7 @@
 #    By: ashih <ashih@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/06 15:12:23 by ashih             #+#    #+#              #
-#    Updated: 2018/09/11 19:16:11 by ashih            ###   ########.fr        #
+#    Updated: 2018/09/11 20:31:45 by ashih            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SDL2_TTF_LOC := $(shell brew --prefix sdl2_ttf)
 SDL2_TTF_INC := $(SDL2_TTF_LOC)/include/SDL2/
 SDL2_TTF_LINK := -L $(SDL2_TTF_LOC)/lib/ -lSDL2_ttf
 
-CFLAGS = -Wall -Werror -Wextra -Wfatal-errors #-g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -Wfatal-errors
 HEADERS = -I $(INCLUDES) -I $(SDL2_INC) -I $(SDL2_IMAGE_INC) -I $(SDL2_TTF_INC)
 
 INCLUDES = includes/
@@ -53,7 +53,6 @@ OBJDIR = objs/
 OBJS = $(addprefix $(OBJDIR), $(SRCS:.cpp=.o))
 
 all: sdl2 sdl2_image sdl2_ttf $(TARGET)
-#all: $(TARGET)
 
 sdl2:
 	@echo "\x1b[1mInstalling SDL2 library...\x1b[0m"
@@ -76,7 +75,7 @@ $(OBJDIR)%.o: $(SRCSDIR)%.cpp
 
 $(TARGET): $(OBJS)
 	@echo "\x1b[1mBuilding $(TARGET)...\x1b[0m"
-	$(CC) -o $(TARGET) $(OBJS) -lpthread $(SDL2_LINK) $(SDL2_IMAGE_LINK) $(SDL2_TTF_LINK) #-g -fsanitize=address
+	$(CC) -o $(TARGET) $(OBJS) -lpthread $(SDL2_LINK) $(SDL2_IMAGE_LINK) $(SDL2_TTF_LINK)
 	@echo "\x1b[1mBuild finished!!\x1b[0m"
 
 clean:
