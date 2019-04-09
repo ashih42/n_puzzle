@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC := clang++
 
-TARGET = npuzzle
+TARGET := npuzzle
 
 SDL2_LOC := $(shell brew --prefix sdl2)
 SDL2_INC := $(SDL2_LOC)/include/SDL2/
@@ -26,13 +26,13 @@ SDL2_TTF_LOC := $(shell brew --prefix sdl2_ttf)
 SDL2_TTF_INC := $(SDL2_TTF_LOC)/include/SDL2/
 SDL2_TTF_LINK := -L $(SDL2_TTF_LOC)/lib/ -lSDL2_ttf
 
-CFLAGS = -Wall -Werror -Wextra -Wfatal-errors
-HEADERS = -I $(INCLUDES) -I $(SDL2_INC) -I $(SDL2_IMAGE_INC) -I $(SDL2_TTF_INC)
+CFLAGS := -Wall -Werror -Wextra -Wfatal-errors
 
-INCLUDES = includes/
+INCLUDES := includes/
+HEADERS := -I $(INCLUDES) -I $(SDL2_INC) -I $(SDL2_IMAGE_INC) -I $(SDL2_TTF_INC)
 
-SRCSDIR = srcs/
-SRCS = main.cpp \
+SRCSDIR := srcs/
+SRCS := main.cpp \
 NPuzzle.cpp \
 Board.cpp \
 Piece.cpp \
@@ -49,25 +49,10 @@ ParserException.cpp \
 Solver.cpp \
 MyComparator.cpp
 
-OBJDIR = objs/
-OBJS = $(addprefix $(OBJDIR), $(SRCS:.cpp=.o))
+OBJDIR := objs/
+OBJS := $(addprefix $(OBJDIR), $(SRCS:.cpp=.o))
 
-all: sdl2 sdl2_image sdl2_ttf $(TARGET)
-
-sdl2:
-	@echo "\x1b[1mInstalling SDL2 library...\x1b[0m"
-	@HOMEBREW_NO_AUTO_UPDATE=1 brew install sdl2
-	@echo
-
-sdl2_image:
-	@echo "\x1b[1mInstalling SDL2 Image library...\x1b[0m"
-	@HOMEBREW_NO_AUTO_UPDATE=1 brew install sdl2_image
-	@echo
-
-sdl2_ttf:
-	@echo "\x1b[1mInstalling SDL2 TTF library...\x1b[0m"
-	@HOMEBREW_NO_AUTO_UPDATE=1 brew install sdl2_ttf
-	@echo
+all: $(TARGET)
 
 $(OBJDIR)%.o: $(SRCSDIR)%.cpp
 	@mkdir -p $(OBJDIR)
@@ -90,4 +75,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re sdl2 sdl2_image sdl2_ttf
+.PHONY: all clean fclean re
