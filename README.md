@@ -1,5 +1,5 @@
 # n_puzzle
-Play and solve the [n-puzzle](https://en.wikipedia.org/wiki/15_puzzle) with [A* search](https://en.wikipedia.org/wiki/A*_search_algorithm) in C using [SDL2](https://www.libsdl.org/download-2.0.php). (42 Silicon Valley)
+Play and solve the [n-puzzle](https://en.wikipedia.org/wiki/15_puzzle) with [A* search](https://en.wikipedia.org/wiki/A*_search_algorithm) in C++ using [SDL2](https://www.libsdl.org/download-2.0.php). (42 Silicon Valley)
 
 ![animation](https://github.com/ashih42/n_puzzle/blob/master/Screenshots/anim.gif)
 
